@@ -1,0 +1,57 @@
+# Merge Sort Ödevi
+
+## [16, 21, 11, 8, 12, 22] -> Merge Sort Aşamaları
+
+### 1. Bölme (Divide) Aşaması
+
+Dizi sürekli olarak ikiye bölünür:
+
+- [16, 21, 11, 8, 12, 22]
+    - Sol: [16, 21, 11]
+    - Sağ: [8, 12, 22]
+
+- [16, 21, 11]  
+    - Sol: [16]
+    - Sağ: [21, 11]
+        - [21, 11]  
+            - Sol: [21]
+            - Sağ: [11]
+
+- [8, 12, 22]  
+    - Sol: [8]
+    - Sağ: [12, 22]
+        - [12, 22]  
+            - Sol: [12]
+            - Sağ: [22]
+
+### 2. Birleştirme (Merge) ve Sıralama Aşaması
+
+Alt diziler birleştirilir ve sıralanır:
+
+- [16] ve [21] → [16, 21]
+- [16, 21] ve [11] → [11, 16, 21]
+- [12] ve [22] → [12, 22]
+- [8] ve [12, 22] → [8, 12, 22]
+
+Son aşamada iki yarı birleştirilir:
+
+- [11, 16, 21] ve [8, 12, 22]
+
+Birleştirirken küçükten büyüğe sıralanır:
+
+- 8, 11, 12, 16, 21, 22
+
+### Adım Adım Gösterim
+
+1. [16, 21, 11, 8, 12, 22]
+2. [16, 21, 11] | [8, 12, 22]
+3. [16] | [21, 11] | [8] | [12, 22]
+4. [16] | [21] | [11] | [8] | [12] | [22]
+5. [16, 21] | [11] | [8, 12] | [22]
+6. [11, 16, 21] | [8, 12, 22]
+7. [8, 11, 12, 16, 21, 22] (sonuç)
+
+---
+
+## Merge Sort Big-O Gösterimi
+En kötü: O(n log n)
